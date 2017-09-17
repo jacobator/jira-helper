@@ -1,0 +1,21 @@
+{
+	"manifest_version": 2,
+	"name": "jira-helper",
+	"description": "Extension to calculate totals for original issue estimates",
+	"version": "1.2",
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"page_action": {
+		"default_icon": {
+			"32": "icon.png"
+		},
+		"default_title": "jira-helper: Click to calculate"
+	},
+	"permissions": [
+		"tabs",
+		"declarativeContent",
+		"https://*.atlassian.net/issues/*"
+	]
+}
