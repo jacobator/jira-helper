@@ -5,7 +5,7 @@ chrome.runtime.onInstalled.addListener(() => {
 			conditions: [
 				new chrome.declarativeContent.PageStateMatcher({
 					pageUrl: {
-						urlContains: '.atlassian.net/issues',
+						urlContains: '/issues',
 					},
 				})
 			],
@@ -19,7 +19,7 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 	if (
 		changeInfo.status === 'complete' &&
-		tab.url.indexOf('.atlassian.net/issues/') !== -1
+		tab.url.indexOf('/issues/') !== -1
 	) {
 		chrome.tabs.executeScript(tabId, { file: 'main.js' });
 	}
